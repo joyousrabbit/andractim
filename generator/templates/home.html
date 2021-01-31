@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+ 
+ 
+{% block content %}
+    <div class="card-columns p-2">
+    {% for product in products %}
+        <div class="card">
+            <a href={{product.bigimage}}><img class="card-img-top" height="400" src={{product.thumnail}} alt="image"></a>
+            <div class="card-body">
+                <p class="text-center">{{product.title}}</p>
+                <h5 class="font-weight-bold text-center">$ {{product.price}}</h5>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}   
