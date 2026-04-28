@@ -25,6 +25,8 @@ def load_products(root_fd):
     products = []
     subfolders = sorted([f.name for f in os.scandir(root_fd) if f.is_dir()])
     for subfolder in subfolders:
+        if subfolder == "more":
+            continue
         p = Product(os.path.join(root_fd,subfolder))
         products.append(p)
     return products
